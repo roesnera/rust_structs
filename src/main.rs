@@ -34,6 +34,9 @@ fn main() {
     // we can however reference the fields that we not transferred to second_user
 
     println!("{}", my_user.name);
+    
+    let new_point = Point(10, 12);
+    println!("{}", new_point.1);
 }
 
 struct User {
@@ -43,3 +46,7 @@ struct User {
     login_count: i64
 }
 
+// this is a Tuple Struct
+// no field names, just data types
+// used to create a kind of Type
+struct Point(i32, i32);
