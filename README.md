@@ -19,6 +19,10 @@
  we can however reference the fields that were not transferred to second_user
  this derive statement applies to the User struct
  this allows for the use of Debug formatting with the println! macro
+ this is an associated function
+ similar to a static method, this is a function associated with the User struct
+ this function does not accept a "self" arguent
+ it returns "Self", a new instance of User
  this is a Tuple Struct
  no field names, just data types
  used to create a kind of Type

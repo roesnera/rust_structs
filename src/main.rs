@@ -48,6 +48,13 @@ fn main() {
     // we can however reference the fields that were not transferred to second_user
 
     println!("{}", my_user.name);
+
+
+    let last_user = User::new("Adam", "myemail@gmail.email.gov");
+
+    println!("{:?}", last_user);
+
+
     
     let new_point = Point(10, 12);
     println!("{}", new_point.1);
@@ -72,6 +79,23 @@ impl User {
         my_str
     }
 }
+
+
+// this is an associated function
+// similar to a static method, this is a function associated with the User struct
+// this function does not accept a "self" arguent
+// it returns "Self", a new instance of User
+impl User {
+    fn new(name: &str, email: &str) -> Self {
+        Self {
+            name: name.to_string(),
+            email: email.to_string(),
+            is_active: true,
+            login_count: 1
+        }
+    }
+}
+
 
 // this is a Tuple Struct
 // no field names, just data types
