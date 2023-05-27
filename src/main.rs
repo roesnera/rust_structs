@@ -1,3 +1,7 @@
+// println! uses a reference to data, not the data itself
+// this means that references can be passed to println! then used later
+// dbg! prints out data but is passed ownership unless otherwise specified as &(reference)
+
 fn main() {
     let my_user = User {
         name: String::from("Adam"),
@@ -20,6 +24,14 @@ fn main() {
 
     println!("{}", second_user.name);
 
+    // this println! macro uses the :? to tell println to display the second_user
+    // using the debug default formatting
+    println!("{:?}", second_user);
+
+    // this uses a debug format that displays each field on its own line
+    println!("{:#?}", second_user);
+
+
     // note that because we did not change the email field,
     // my_user is no longer valid as a whole
     // this is because we transferred ownership of the email field to second_user
@@ -41,6 +53,9 @@ fn main() {
     let new_unitlike = UnitLike;
 }
 
+// this derive statement applies to the User struct
+// this allows for the use of Debug formatting with the println! macro
+#[derive(Debug)]
 struct User {
     name: String, 
     email: String,
