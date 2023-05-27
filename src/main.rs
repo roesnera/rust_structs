@@ -32,6 +32,8 @@ fn main() {
     println!("{:#?}", second_user);
 
 
+    println!("{}", second_user.describe());
+
     // note that because we did not change the email field,
     // my_user is no longer valid as a whole
     // this is because we transferred ownership of the email field to second_user
@@ -50,7 +52,7 @@ fn main() {
     let new_point = Point(10, 12);
     println!("{}", new_point.1);
 
-    let new_unitlike = UnitLike;
+    let _new_unitlike = UnitLike;
 }
 
 // this derive statement applies to the User struct
@@ -61,6 +63,14 @@ struct User {
     email: String,
     is_active: bool,
     login_count: i64
+}
+
+impl User {
+    fn describe(&self) -> String {
+        let mut my_str = String::new();
+        my_str.push_str(&format!("Hi, my name is {}, my email is {}, I have logged on {} times, and my status is {}", &self.name, &self.email, &self.login_count, &self.is_active));
+        my_str
+    }
 }
 
 // this is a Tuple Struct
