@@ -43,7 +43,7 @@ fn main() {
 
     // println!("{}", my_user.email);
 
-    // we can however reference the fields that we not transferred to second_user
+    // we can however reference the fields that were not transferred to second_user
 
     println!("{}", my_user.name);
     
