@@ -37,6 +37,8 @@ fn main() {
     
     let new_point = Point(10, 12);
     println!("{}", new_point.1);
+
+    let new_unitlike = UnitLike;
 }
 
 struct User {
@@ -50,3 +52,7 @@ struct User {
 // no field names, just data types
 // used to create a kind of Type
 struct Point(i32, i32);
+
+// this is a Unit-Like Struct
+// behaves like a () unit
+struct UnitLike;
